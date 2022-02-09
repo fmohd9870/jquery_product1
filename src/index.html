@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -14,7 +13,7 @@
         <table class="table1">
           <tr>
             <td>
-              <label for="id">Product Id</label>
+              <label for="id">SKU</label>
             </td>
             <td>
               <input type="number" id="id" />
@@ -37,25 +36,40 @@
             </td>
           </tr>
           <tr>
+            <td>
+              <label for="price">Product Quantity</label>
+            </td>
+            <td>
+              <input type="number" id="quantity" />
+            </td>
+          </tr>
+          <tr>
             <td colspan="2">
               <input type="button" id="add" value="Add Product" class="add" onclick="check()"/>
               <input type="button" id="edit" value="Edit Product" class="edit" onclick="update()"/>
             </td>
           </tr>
         </table>
+        <div id="notification">
+          <div class="success">Product Added Successfully.<a href="#" id="success-btn" class="close">X</a></div>
+          <div class="error">Product Deleted Successfully.<a href="#" id="error-btn" class="close">X</a></div>
+        </div>
         <table class="table2">
             <thead>
           <tr>
             <th>
-              <label for="">Product Id</label>
+              <label for="">SKU</label>
             </th>
 
             <th>
-              <label for="">Product Name</label>
+              <label for="">Name</label>
             </th>
 
             <th>
-              <label for="">Product Price</label>
+              <label for="">Price</label>
+            </th>
+            <th>
+              <label for="">Quantity</label>
             </th>
             <th>
               <label for="">Action</label>
@@ -70,4 +84,7 @@
       </div>
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+
 </html>

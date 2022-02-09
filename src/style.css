@@ -9,19 +9,49 @@
   .table1 {
     border-collapse: separate;
     border-spacing: 8px 15px;
-    margin-left: 25%;
   }
   .table2{
     border-collapse: separate;
     border-spacing: 108px 15px;
   }
-  .add {
+  /* .add {
     padding: 15px 30px;
     margin-left: 15%;
     display: block;
-  }
+  } */
   .edit {
     padding: 15px 30px;
     margin-left: 15%;
     display: none;
   }
+  #notification > div{
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  #notification .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: none;
+  }
+  
+  #notification .success{
+    border: 1px solid green;
+    background: #7ED47E;
+    display:none;
+  }
+  
+  #notification .error{
+    border: 1px solid red;
+    background: #FF5733;
+    display: none;
+  }
+.add{
+	border-radius: 5px;
+	border: 1px solid #eeeeee;
+	padding: 10px;
+}
