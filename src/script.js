@@ -16,9 +16,7 @@ $(document).ready(function () {
       }
     }
   });
-  $("body").on("click", "edit", function () {
-    edit();
-  });
+  
   $("#success-btn").click(function () {
     $(".success").css("display", "none");
   });
