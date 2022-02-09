@@ -16,17 +16,22 @@ $(document).ready(function () {
       }
     }
   });
-  
+
   $("#success-btn").click(function () {
     $(".success").css("display", "none");
   });
   $("#error-btn").click(function () {
     $(".error").css("display", "none");
   });
-  $("#table_body").on("click","#edits", function(){
-    edit($(this).attr("data-id"),$(this).attr("data-name"),$(this).attr("data-price"),$(this).attr("data-quantity"));
+  $("#table_body").on("click", "#edits", function () {
+    edit(
+      $(this).attr("data-id"),
+      $(this).attr("data-name"),
+      $(this).attr("data-price"),
+      $(this).attr("data-quantity")
+    );
   });
-  $("#table_body").on("click","#deletes", function(){
+  $("#table_body").on("click", "#deletes", function () {
     del($(this).attr("data-delete"));
   });
 });
@@ -63,7 +68,15 @@ function display() {
         a[i].price +
         "</td><td>" +
         a[i].quantity +
-        "</td><td><input type='button' Value='Edit' id='edits' data-id=" + a[i].id+" data-name="  + a[i].name+" data-price="  +a[i].price +" data-quantity="+a[i].quantity +"><input type='button' Value='Delete' id='deletes' data-delete=" +
+        "</td><td><input type='button' Value='Edit' id='edits' data-id=" +
+        a[i].id +
+        " data-name=" +
+        a[i].name +
+        " data-price=" +
+        a[i].price +
+        " data-quantity=" +
+        a[i].quantity +
+        "><input type='button' Value='Delete' id='deletes' data-delete=" +
         a[i].id +
         "></td></tr>";
     }
