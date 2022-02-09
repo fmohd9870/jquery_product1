@@ -23,6 +23,12 @@ $(document).ready(function () {
   $("#error-btn").click(function () {
     $(".error").css("display", "none");
   });
+  $("#table_body").on("click","#edits", function(){
+    edit($(this).attr("data-id"),$(this).attr("data-name"),$(this).attr("data-price"),$(this).attr("data-quantity"));
+  });
+  $("#table_body").on("click","#deletes", function(){
+    del($(this).attr("data-delete"));
+  });
 });
 
 function fun() {
@@ -36,6 +42,7 @@ function fun() {
     var b = { id: id, name: name, price: price, quantity: quantity };
     a.push(b);
     $(".success").css("display", "block");
+    $(".error").css("display", "none");
   }
 
   display();
@@ -56,17 +63,9 @@ function display() {
         a[i].price +
         "</td><td>" +
         a[i].quantity +
-        "</td><td><input type='button' Value='Edit' onclick='edit(" +
+        "</td><td><input type='button' Value='Edit' id='edits' data-id=" + a[i].id+" data-name="  + a[i].name+" data-price="  +a[i].price +" data-quantity="+a[i].quantity +"><input type='button' Value='Delete' id='deletes' data-delete=" +
         a[i].id +
-        ',"' +
-        a[i].name +
-        '",' +
-        a[i].price +
-        "," +
-        a[i].quantity +
-        ")'><input type='button' Value='Delete' onclick='del(" +
-        a[i].id +
-        ")'></td></tr>";
+        "></td></tr>";
     }
     $("#id").val("");
     $("#name").val("");
@@ -110,6 +109,7 @@ function del(pid) {
         a.splice(i, 1);
         display();
         $(".error").css("display", "block");
+        $(".success").css("display", "none");
         console.log("element deleted");
         if (a.length == 0) {
           $("#table_body").html("");
@@ -117,7 +117,6 @@ function del(pid) {
       } else {
         display();
       }
-
       console.log(a.length);
     }
   }
